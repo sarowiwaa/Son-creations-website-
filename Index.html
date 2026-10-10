@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071A33">
+
+  <title>Son Creation | Web Design & Digital Solutions</title>
+  <meta name="description" content="Son Creation helps businesses build a professional online presence with modern websites and digital solutions.">
+
+  <style>
+    :root {
+      --navy: #071a33;
+      --blue: #1769ff;
+      --gold: #f5b942;
+      --white: #ffffff;
+      --light: #f3f6fb;
+      --text: #172337;
+      --muted: #667085;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    .site-nav {
+      background: rgba(7, 26, 51, .97);
+      color: var(--white);
+      padding: 15px 4%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .brand-mark {
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      background: var(--gold);
+      color: var(--navy);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 19px;
+    }
+
+    .brand-name {
+      font-size: 19px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .brand-name span {
+      color: var(--gold);
+    }
+
+    .brand small {
+      display: block;
+      font-size: 11px;
+      color: #c4d0e0;
+      margin-top: 4px;
+    }
+
+    .site-nav nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .site-nav nav a {
+      color: #e2e8f0;
+      font-size: 14px;
+    }
+
+    .site-nav nav a:hover {
+      color: var(--gold);
+    }
+
+    .nav-tools {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .language-switch {
+      display: flex;
+      gap: 4px;
+      padding: 4px;
+      border: 1px solid #40516b;
+      border-radius: 30px;
+    }
+
+    .language-option {
+      border: 0;
+      background: transparent;
+      color: white;
+      padding: 7px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .language-option.is-active {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 0;
+      border-radius: 9px;
+      padding: 13px 21px;
+      background: var(--blue);
+      color: white;
+      font-weight: bold;
+      transition: transform .2s, background .2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: #0955dc;
+    }
+
+    .button.gold {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .button.outline {
+      background: transparent;
+      border: 1px solid #a8bbd7;
+      color: white;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 80% 20%, #183e70 0, transparent 35%),
+        var(--navy);
+      color: white;
+      padding: 95px 0 85px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.1;
+      letter-spacing: -1.8px;
+      margin-bottom: 22px;
+    }
+
+    .hero-copy > p:not(.eyebrow) {
+      color: #d4deed;
+      font-size: 17px;
+      max-width: 590px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-note {
+      margin-top: 20px;
+      color: #bac8dc;
+      font-size: 13px;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #16345b, #0c203c);
+      border: 1px solid #31496a;
+      padding: 30px;
+      border-radius: 24px;
+      box-shadow: 0 25px 70px #0003;
+    }
+
+    .hero-visual {
+      min-height: 280px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border: 1px solid #476184;
+      border-radius: 18px;
+      padding: 24px;
+      background: linear-gradient(135deg, #1e4c83, #102643);
+    }
+
+    .hero-visual .symbol {
+      font-size: 65px;
+      margin-bottom: 10px;
+    }
+
+    .hero-visual h2 {
+      color: var(--gold);
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .hero-visual p {
+      color: #d5e1f2;
+      font-size: 14px;
+    }
+
+    .section {
+      padding: 85px 0;
+    }
+
+    .section.light {
+      background: var(--light);
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 45px;
+    }
+
+    .section-heading .eyebrow {
+      color: var(--blue);
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.2;
+      color: var(--navy);
+      letter-spacing: -.8px;
+    }
+
+    .section-heading > p:not(.eyebrow) {
+      color: var(--muted);
+      margin-top: 15px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border: 1px solid #e1e7f0;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px #10233c08;
+    }
+
+    .card-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      background: #eaf1ff;
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .step {
+      padding: 23px;
+      border-left: 3px solid var(--gold);
+      background: white;
+      border-radius: 0 14px 14px 0;
+    }
+
+    .step-number {
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+
+    .step h3 {
+      color: var(--navy);
+      font-size: 17px;
+      margin-bottom: 9px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-panel {
+      background: var(--navy);
+      color: white;
+      padding: 35px;
+      border-radius: 22px;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-panel .big-symbol {
+      font-size: 60px;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .about-panel h3 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .about-panel p {
+      color: #cfdaea;
+    }
+
+    .about-copy > p {
+      color: var(--muted);
+      margin-top: 17px;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-top: 22px;
+    }
+
+    .feature-list li {
+      margin: 12px 0;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      color: #168354;
+      font-weight: 900;
+      margin-right: 10px;
+    }
+
+    .pricing-card {
+      text-align: center;
+      position: relative;
+    }
+
+    .pricing-card.featured {
+      border: 2px solid var(--blue);
+      box-shadow: 0 15px 35px #1769ff18;
+    }
+
+    .price {
+      color: var(--blue);
+      font-size: 35px;
+      font-weight: 900;
+      margin: 18px 0 6px;
+    }
+
+    .price-note {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    .pricing-card ul {
+      text-align: left;
+      list-style: none;
+      margin: 23px 0;
+    }
+
+    .pricing-card li {
+      font-size: 14px;
+      margin: 12px 0;
+      color: var(--muted);
+    }
+
+    .pricing-card li::before {
+      content: "✓";
+      color: #168354;
+      font-weight: bold;
+      margin-right: 9px;
+    }
+
+    .pricing-card .button {
+      width: 100%;
+    }
+
+    .faq-list {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    details {
+      background: white;
+      border: 1px solid #e1e7f0;
+      border-radius: 12px;
+      padding: 19px 22px;
+      margin-bottom: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    details p {
+      color: var(--muted);
+      font-size: 14px;
+      padding-top: 12px;
+    }
+
+    .final-cta {
+      background: var(--navy);
+      color: white;
+      padding: 75px 0;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      color: white;
+      max-width: 700px;
+      margin: 0 auto 17px;
+    }
+
+    .final-cta p {
+      color: #cbd7e7;
+      max-width: 650px;
+      margin: 0 auto 27px;
+    }
+
+    footer {
+      background: #041124;
+      color: white;
+      padding: 35px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner p {
+      color: #aab9cd;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .mobile-whatsapp {
+      display: none;
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      z-index: 200;
+      background: #20b968;
+      color: white;
+      font-weight: bold;
+      padding: 13px 19px;
+      border-radius: 35px;
+      box-shadow: 0 5px 22px #0003;
+    }
+
+    @media (max-width: 900px) {
+      .site-nav {
+        justify-content: space-between;
+      }
+
+      .site-nav nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        padding-top: 10px;
+      }
+
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        max-width: 600px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .site-nav {
+        padding: 12px 4%;
+      }
+
+      .brand-name {
+        font-size: 17px;
+      }
+
+      .brand small {
+        font-size: 10px;
+      }
+
+      .nav-tools .button {
+        display: none;
+      }
+
+      .site-nav nav {
+        gap: 14px;
+      }
+
+      .site-nav nav a {
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 65px 0;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .cards,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      .mobile-whatsapp {
+        display: block;
+      }
+
+      footer {
+        padding-bottom: 80px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-nav">
+  <a class="brand" href="#top" aria-label="Son Creation home">
+    <span class="brand-mark">SC</span>
+    <span class="brand-name">Son <span>Creation</span>
+      <small data-i18n="tagline">Creative Digital Solutions</small>
+    </span>
+  </a>
+
+  <nav aria-label="Main navigation">
+    <a href="#services" data-i18n="navServices">Services</a>
+    <a href="#process" data-i18n="navProcess">How It Works</a>
+    <a href="#about" data-i18n="navAbout">About</a>
+    <a href="#pricing" data-i18n="navPricing">Pricing</a>
+    <a href="#faq" data-i18n="navFaq">FAQ</a>
+  </nav>
+
+  <div class="nav-tools">
+    <div class="language-switch" aria-label="Choose language">
+      <button class="language-option is-active" type="button"
+        data-lang="en" aria-pressed="true">EN</button>
+      <button class="language-option" type="button"
+        data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+    <a class="button gold wa-link" href="#" data-i18n="navCta">Contact Us</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="heroEyebrow">Your vision, our creativity</p>
+        <h1 data-i18n="heroTitle">
+          Build a Powerful Online Presence for Your Business
+        </h1>
+        <p data-i18n="heroText">
+          Son Creation helps you present your business professionally with
+          modern websites and creative digital solutions designed around your goals.
+        </p>
+        <div class="hero-actions">
+          <a class="button gold wa-link" href="#" data-i18n="heroCta">
+            Get Started on WhatsApp
+          </a>
+          <a class="button outline" href="#services" data-i18n="heroSecondary">
+            Explore Our Services
+          </a>
+        </div>
+        <p class="hero-note" data-i18n="heroNote">
+          Personal service. Creative ideas. Solutions built around your needs.
+        </p>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-visual">
+          <div>
+            <div class="symbol" aria-hidden="true">✦</div>
+            <h2>Son Creation</h2>
+            <p data-i18n="visualText">
+              Creativity that brings your ideas to life.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section light">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="servicesEyebrow">What We Do</p>
+        <h2 data-i18n="servicesTitle">Digital Solutions for Your Business</h2>
+        <p data-i18n="servicesText">
+          Practical creative services to help your business look professional
+          and connect with more people.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🌐</div>
+          <h3 data-i18n="service1Title">Website Design</h3>
+          <p data-i18n="service1Text">
+            Modern, responsive websites that introduce your business,
+            showcase your services and make it easy for customers to contact you.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🎨</div>
+          <h3 data-i18n="service2Title">Graphic Design</h3>
+          <p data-i18n="service2Text">
+            Creative designs for promotional materials, business branding,
+            posters, flyers and social media.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">📱</div>
+          <h3 data-i18n="service3Title">Social Media Content</h3>
+          <p data-i18n="service3Text">
+            Engaging visual content to communicate your message and maintain
+            a consistent brand identity online.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">✨</div>
+          <h3 data-i18n="service4Title">Brand Identity</h3>
+          <p data-i18n="service4Text">
+            Build a recognizable brand with a consistent visual style,
+            thoughtful design and a professional presentation.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🛠️</div>
+          <h3 data-i18n="service5Title">Website Updates</h3>
+          <p data-i18n="service5Text">
+            Improve an existing website with updated information,
+            cleaner layouts and a better mobile experience.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">💬</div>
+          <h3 data-i18n="service6Title">Digital Consultation</h3>
+          <p data-i18n="service6Text">
+            Discuss your goals and identify practical digital solutions
+            suited to your project and budget.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="processEyebrow">Our Process</p>
+        <h2 data-i18n="processTitle">Simple From Start to Finish</h2>
+        <p data-i18n="processText">
+          We keep communication clear and make every step easy to understand.
+        </p>
+      </div>
+
+      <div class="steps">
+        <article class="step">
+          <div class="step-number">01</div>
+          <h3 data-i18n="step1Title">Tell Us Your Idea</h3>
+          <p data-i18n="step1Text">
+            Contact us and explain your business, project or creative needs.
+          </p>
+        </article>
+
+        <article class="step">
+          <div class="step-number">02</div>
+          <h3 data-i18n="step2Title">Plan the Solution</h3>
+          <p data-i18n="step2Text">
+            We discuss the scope, requirements, timeline and budget.
+          </p>
+        </article>
+
+        <article class="step">
+          <div class="step-number">03</div>
+          <h3 data-i18n="step3Title">Create and Review</h3>
+          <p data-i18n="step3Text">
+            We develop the agreed work and share it with you for review.
+          </p>
+        </article>
+
+        <article class="step">
+          <div class="step-number">04</div>
+          <h3 data-i18n="step4Title">Launch Your Project</h3>
+          <p data-i18n="step4Text">
+            After approval and agreed payment, we deliver the final work.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section light">
+    <div class="container about-grid">
+      <div class="about-panel">
+        <div class="big-symbol" aria-hidden="true">✦</div>
+        <h3 data-i18n="aboutPanelTitle">Ideas Into Impact</h3>
+        <p data-i18n="aboutPanelText">
+          Creative thinking and digital tools to help your ideas stand out.
+        </p>
+      </div>
+
+      <div class="about-copy">
+        <p class="eyebrow" data-i18n="aboutEyebrow">About Son Creation</p>
+        <h2 data-i18n="aboutTitle">
+          Creative Solutions With Your Goals in Mind
+        </h2>
+        <p data-i18n="aboutText1">
+          Son Creation is focused on helping individuals, entrepreneurs
+          and businesses communicate their ideas through professional
+          digital experiences and creative design.
+        </p>
+        <p data-i18n="aboutText2">
+          We believe good design should be clear, useful and aligned
+          with the purpose of every project.
+        </p>
+
+        <ul class="feature-list">
+          <li data-i18n="feature1">Personalized service</li>
+          <li data-i18n="feature2">Mobile-friendly website design</li>
+          <li data-i18n="feature3">Clear communication</li>
+          <li data-i18n="feature4">Solutions tailored to your needs</li>
+        </ul>
+
+        <br>
+        <a class="button wa-link" href="#" data-i18n="aboutCta">
+          Discuss Your Project
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="pricingEyebrow">Flexible Options</p>
+        <h2 data-i18n="pricingTitle">Let's Find the Right Solution</h2>
+        <p data-i18n="pricingText">
+          Every project is different. Contact us for a quote based on
+          your requirements, timeline and budget.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card pricing-card">
+          <h3 data-i18n="plan1Title">Starter</h3>
+          <p data-i18n="plan1Text">
+            For individuals and small businesses starting online.
+          </p>
+          <div class="price" data-i18n="plan1Price">Custom Quote</div>
+          <div class="price-note" data-i18n="plan1Note">
+            Based on project scope
+          </div>
+          <ul>
+            <li data-i18n="plan1Feature1">Basic website or design project</li>
+            <li data-i18n="plan1Feature2">Mobile-friendly presentation</li>
+            <li data-i18n="plan1Feature3">Agreed revisions</li>
+          </ul>
+          <a class="button wa-link" href="#" data-plan="Starter"
+            data-i18n="planCta">Request a Quote</a>
+        </article>
+
+        <article class="card pricing-card featured">
+          <h3 data-i18n="plan2Title">Professional</h3>
+          <p data-i18n="plan2Text">
+            For businesses that need a stronger digital presence.
+          </p>
+          <div class="price" data-i18n="plan2Price">Custom Quote</div>
+          <div class="price-note" data-i18n="plan2Note">
+            Based on project scope
+          </div>
+          <ul>
+            <li data-i18n="plan2Feature1">Professional website design</li>
+            <li data-i18n="plan2Feature2">Business branding and visuals</li>
+            <li data-i18n="plan2Feature3">Contact and enquiry options</li>
+          </ul>
+          <a class="button wa-link" href="#" data-plan="Professional"
+            data-i18n="planCta">Request a Quote</a>
+        </article>
+
+        <article class="card pricing-card">
+          <h3 data-i18n="plan3Title">Custom Project</h3>
+          <p data-i18n="plan3Text">
+            For tailored creative work or specific business requirements.
+          </p>
+          <div class="price" data-i18n="plan3Price">Custom Quote</div>
+          <div class="price-note" data-i18n="plan3Note">
+            Based on project scope
+          </div>
+          <ul>
+            <li data-i18n="plan3Feature1">Project-specific planning</li>
+            <li data-i18n="plan3Feature2">Tailored creative deliverables</li>
+            <li data-i18n="plan3Feature3">Agreed delivery schedule</li>
+          </ul>
+          <a class="button wa-link" href="#" data-plan="Custom Project"
+            data-i18n="planCta">Request a Quote</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section light">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="faqEyebrow">Frequently Asked Questions</p>
+        <h2 data-i18n="faqTitle">Questions? We've Got Answers.</h2>
+      </div>
+
+      <div class="faq-list">
+        <details>
+          <summary data-i18n="faq1Q">How do I get started?</summary>
+          <p data-i18n="faq1A">
+            Send us a WhatsApp message explaining your project and what you need.
+          </p>
+        </details>
+
+        <details>
+          <summary data-i18n="faq2Q">How much do your services cost?</summary>
+          <p data-i18n="faq2A">
+            Pricing depends on the work required. We discuss your needs and
+            provide a quote before starting.
+          </p>
+        </details>
+
+        <details>
+          <summary data-i18n="faq3Q">Will my website work on phones?</summary>
+          <p data-i18n="faq3A">
+            Yes. Website projects are designed to adapt to mobile phones,
+            tablets and desktop screens.
+          </p>
+        </details>
+
+        <details>
+          <summary data-i18n="faq4Q">Can I request changes?</summary>
+          <p data-i18n="faq4A">
+            Yes. The agreed project scope will specify the included review
+            and revision process.
+          </p>
+        </details>
+
+        <details>
+          <summary data-i18n="faq5Q">How do I contact Son Creation?</summary>
+          <p data-i18n="faq5A">
+            Use any WhatsApp button on this website to contact us directly.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <p class="eyebrow" data-i18n="finalEyebrow">Let's Create Something Great</p>
+      <h2 data-i18n="finalTitle">
+        Ready to Bring Your Idea to Life?
+      </h2>
+      <p data-i18n="finalText">
+        Tell us what you have in mind. Let's discuss your project and
+        find the right creative solution together.
+      </p>
+      <a class="button gold wa-link" href="#" data-i18n="finalCta">
+        Chat With Us on WhatsApp
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <strong>Son Creation</strong>
+      <p data-i18n="footerText">
+        Creative Digital Solutions for Your Business.
+      </p>
+      <p>WhatsApp: 0740868638</p>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="#services" data-i18n="navServices">Services</a>
+      <a href="#about" data-i18n="navAbout">About</a>
+      <a href="#pricing" data-i18n="navPricing">Pricing</a>
+      <a href="#faq" data-i18n="navFaq">FAQ</a>
+    </nav>
+
+    <p>© <span id="year"></span> Son Creation</p>
+  </div>
+</footer>
+
+<a class="mobile-whatsapp wa-link" href="#" data-i18n="mobileCta">
+  WhatsApp
+</a>
+
+<script>
+  const WHATSAPP_NUMBER = "254740868638";
+
+  const translations = {
+    en: {
+      tagline: "Creative Digital Solutions",
+      navServices: "Services",
+      navProcess: "How It Works",
+      navAbout: "About",
+      navPricing: "Pricing",
+      navFaq: "FAQ",
+      navCta: "Contact Us",
+      heroEyebrow: "Your vision, our creativity",
+      heroTitle: "Build a Powerful Online Presence for Your Business",
+      heroText: "Son Creation helps you present your business professionally with modern websites and creative digital solutions designed around your goals.",
+      heroCta: "Get Started on WhatsApp",
+      heroSecondary: "Explore Our Services",
+      heroNote: "Personal service. Creative ideas. Solutions built around your needs.",
+      visualText: "Creativity that brings your ideas to life.",
+      servicesEyebrow: "What We Do",
+      servicesTitle: "Digital Solutions for Your Business",
+      servicesText: "Practical creative services to help your business look professional and connect with more people.",
+      service1Title: "Website Design",
+      service1Text: "Modern, responsive websites that introduce your business, showcase your services and make it easy for customers to contact you.",
+      service2Title: "Graphic Design",
+      service2Text: "Creative designs for promotional materials, business branding, posters, flyers and social media.",
+      service3Title: "Social Media Content",
+      service3Text: "Engaging visual content to communicate your message and maintain a consistent brand identity online.",
+      service4Title: "Brand Identity",
+      service4Text: "Build a recognizable brand with a consistent visual style, thoughtful design and a professional presentation.",
+      service5Title: "Website Updates",
+      service5Text: "Improve an existing website with updated information, cleaner layouts and a better mobile experience.",
+      service6Title: "Digital Consultation",
+      service6Text: "Discuss your goals and identify practical digital solutions suited to your project and budget.",
+      processEyebrow: "Our Process",
+      processTitle: "Simple From Start to Finish",
+      processText: "We keep communication clear and make every step easy to understand.",
+      step1Title: "Tell Us Your Idea",
+      step1Text: "Contact us and explain your business, project or creative needs.",
+      step2Title: "Plan the Solution",
+      step2Text: "We discuss the scope, requirements, timeline and budget.",
+      step3Title: "Create and Review",
+      step3Text: "We develop the agreed work and share it with you for review.",
+      step4Title: "Launch Your Project",
+      step4Text: "After approval and agreed payment, we deliver the final work.",
+      aboutPanelTitle: "Ideas Into Impact",
+      aboutPanelText: "Creative thinking and digital tools to help your ideas stand out.",
+      aboutEyebrow: "About Son Creation",
+      aboutTitle: "Creative Solutions With Your Goals in Mind",
+      aboutText1: "Son Creation is focused on helping individuals, entrepreneurs and businesses communicate their ideas through professional digital experiences and creative design.",
+      aboutText2: "We believe good design should be clear, useful and aligned with the purpose of every project.",
+      feature1: "Personalized service",
+      feature2: "Mobile-friendly website design",
+      feature3: "Clear communication",
+      feature4: "Solutions tailored to your needs",
+      aboutCta: "Discuss Your Project",
+      pricingEyebrow: "Flexible Options",
+      pricingTitle: "Let's Find the Right Solution",
+      pricingText: "Every project is different. Contact us for a quote based on your requirements, timeline and budget.",
+      plan1Title: "Starter",
+      plan1Text: "For individuals and small businesses starting online.",
+      plan1Price: "Custom Quote",
+      plan1Note: "Based on project scope",
+      plan1Feature1: "Basic website or design project",
+      plan1Feature2: "Mobile-friendly presentation",
+      plan1Feature3: "Agreed revisions",
+      plan2Title: "Professional",
+      plan2Text: "For businesses that need a stronger digital presence.",
+      plan2Price: "Custom Quote",
+      plan2Note: "Based on project scope",
+      plan2Feature1: "Professional website design",
+      plan2Feature2: "Business branding and visuals",
+      plan2Feature3: "Contact and enquiry options",
+      plan3Title: "Custom Project",
+      plan3Text: "For tailored creative work or specific business requirements.",
+      plan3Price: "Custom Quote",
+      plan3Note: "Based on project scope",
+      plan3Feature1: "Project-specific planning",
+      plan3Feature2: "Tailored creative deliverables",
+      plan3Feature3: "Agreed delivery schedule",
+      planCta: "Request a Quote",
+      faqEyebrow: "Frequently Asked Questions",
+      faqTitle: "Questions? We've Got Answers.",
+      faq1Q: "How do I get started?",
+      faq1A: "Send us a WhatsApp message explaining your project and what you need.",
+      faq2Q: "How much do your services cost?",
+      faq2A: "Pricing depends on the work required. We discuss your needs and provide a quote before starting.",
+      faq3Q: "Will my website work on phones?",
+      faq3A: "Yes. Website projects are designed to adapt to mobile phones, tablets and desktop screens.",
+      faq4Q: "Can I request changes?",
+      faq4A: "Yes. The agreed project scope will specify the included review and revision process.",
+      faq5Q: "How do I contact Son Creation?",
+      faq5A: "Use any WhatsApp button on this website to contact us directly.",
+      finalEyebrow: "Let's Create Something Great",
+      finalTitle: "Ready to Bring Your Idea to Life?",
+      finalText: "Tell us what you have in mind. Let's discuss your project and find the right creative solution together.",
+      finalCta: "Chat With Us on WhatsApp",
+      footerText: "Creative Digital Solutions for Your Business.",
+      mobileCta: "WhatsApp"
+    },
+
+    fr: {
+      tagline: "Solutions numériques créatives",
+      navServices: "Services",
+      navProcess: "Comment ça marche",
+      navAbout: "À propos",
+      navPricing: "Tarifs",
+      navFaq: "FAQ",
+      navCta: "Contactez-nous",
+      heroEyebrow: "Votre vision, notre créativité",
+      heroTitle: "Développez une présence en ligne forte pour votre entreprise",
+      heroText: "Son Creation vous aide à présenter votre entreprise de manière professionnelle grâce à des sites web modernes et des solutions numériques adaptées à vos objectifs.",
+      heroCta: "Commencer sur WhatsApp",
+      heroSecondary: "Découvrir nos services",
+      heroNote: "Un service personnalisé. Des idées créatives. Des solutions adaptées à vos besoins.",
+      visualText: "La créativité qui donne vie à vos idées.",
+      servicesEyebrow: "Nos activités",
+      servicesTitle: "Des solutions numériques pour votre entreprise",
+      servicesText: "Des services créatifs et pratiques pour valoriser votre entreprise et toucher davantage de personnes.",
+      service1Title: "Création de sites web",
+      service1Text: "Des sites web modernes et adaptatifs pour présenter votre entreprise, mettre en valeur vos services et faciliter le contact avec vos clients.",
+      service2Title: "Design graphique",
+      service2Text: "Des créations pour vos supports promotionnels, votre identité visuelle, vos affiches, vos flyers et vos réseaux sociaux.",
+      service3Title: "Contenu pour les réseaux sociaux",
+      service3Text: "Des contenus visuels attrayants pour transmettre votre message et maintenir une identité de marque cohérente en ligne.",
+      service4Title: "Identité de marque",
+      service4Text: "Développez une marque reconnaissable grâce à un style visuel cohérent, un design réfléchi et une présentation professionnelle.",
+      service5Title: "Mise à jour de sites web",
+      service5Text: "Améliorez votre site existant avec des informations actualisées, une présentation plus claire et une meilleure expérience mobile.",
+      service6Title: "Conseil numérique",
+      service6Text: "Parlons de vos objectifs et identifions des solutions numériques adaptées à votre projet et à votre budget.",
+      processEyebrow: "Notre méthode",
+      processTitle: "Un processus simple du début à la fin",
+      processText: "Nous privilégions une communication claire et des étapes faciles à comprendre.",
+      step1Title: "Présentez votre idée",
+      step1Text: "Contactez-nous et expliquez votre entreprise, votre projet ou vos besoins créatifs.",
+      step2Title: "Planifions la solution",
+      step2Text: "Nous discutons du travail à réaliser, des exigences, des délais et du budget.",
+      step3Title: "Création et révision",
+      step3Text: "Nous réalisons le travail convenu et vous le présentons pour révision.",
+      step4Title: "Lançons votre projet",
+      step4Text: "Après validation et paiement convenu, nous livrons le travail final.",
+      aboutPanelTitle: "Des idées qui ont de l'impact",
+      aboutPanelText: "La créativité et les outils numériques pour faire ressortir vos idées.",
+      aboutEyebrow: "À propos de Son Creation",
+      aboutTitle: "Des solutions créatives au service de vos objectifs",
+      aboutText1: "Son Creation aide les particuliers, les entrepreneurs et les entreprises à communiquer leurs idées grâce à des expériences numériques professionnelles et à des créations visuelles.",
+      aboutText2: "Nous pensons qu'un bon design doit être clair, utile et adapté à l'objectif de chaque projet.",
+      feature1: "Un service personnalisé",
+      feature2: "Des sites adaptés aux mobiles",
+      feature3: "Une communication claire",
+      feature4: "Des solutions adaptées à vos besoins",
+      aboutCta: "Parlons de votre projet",
+      pricingEyebrow: "Des options flexibles",
+      pricingTitle: "Trouvons la solution qui vous convient",
+      pricingText: "Chaque projet est différent. Contactez-nous pour obtenir un devis selon vos besoins, vos délais et votre budget.",
+      plan1Title: "Essentiel",
+      plan1Text: "Pour les particuliers et les petites entreprises qui débutent en ligne.",
+      plan1Price: "Devis personnalisé",
+      plan1Note: "Selon le projet",
+      plan1Feature1: "Site web simple ou projet de design",
+      plan1Feature2: "Présentation adaptée aux mobiles",
+      plan1Feature3: "Révisions convenues",
+      plan2Title: "Professionnel",
+      plan2Text: "Pour les entreprises qui souhaitent renforcer leur présence numérique.",
+      plan2Price: "Devis personnalisé",
+      plan2Note: "Selon le projet",
+      plan2Feature1: "Création de site web professionnel",
+      plan2Feature2: "Identité visuelle et image de marque",
+      plan2Feature3: "Options de contact et de demande d'information",
+      plan3Title: "Projet sur mesure",
+      plan3Text: "Pour des créations personnalisées ou des besoins spécifiques.",
+      plan3Price: "Devis personnalisé",
+      plan3Note: "Selon le projet",
+      plan3Feature1: "Planification adaptée au projet",
+      plan3Feature2: "Livrables créatifs personnalisés",
+      plan3Feature3: "Calendrier de livraison convenu",
+      planCta: "Demander un devis",
+      faqEyebrow: "Questions fréquentes",
+      faqTitle: "Des questions ? Nous avons les réponses.",
+      faq1Q: "Comment commencer ?",
+      faq1A: "Envoyez-nous un message WhatsApp en expliquant votre projet et vos besoins.",
+      faq2Q: "Combien coûtent vos services ?",
+      faq2A: "Le prix dépend du travail nécessaire. Nous discutons de vos besoins et proposons un devis avant de commencer.",
+      faq3Q: "Mon site fonctionnera-t-il sur téléphone ?",
+      faq3A: "Oui. Les sites sont conçus pour s'adapter aux téléphones, aux tablettes et aux ordinateurs.",
+      faq4Q: "Puis-je demander des modifications ?",
+      faq4A: "Oui. Les modalités de révision et les modifications incluses seront précisées dans l'accord du projet.",
+      faq5Q: "Comment contacter Son Creation ?",
+      faq5A: "Utilisez l'un des boutons WhatsApp de ce site pour nous contacter directement.",
+      finalEyebrow: "Créons quelque chose d'exceptionnel",
+      finalTitle: "Prêt à donner vie à votre idée ?",
+      finalText: "Expliquez-nous votre projet. Discutons de vos besoins pour trouver ensemble la bonne solution créative.",
+      finalCta: "Discuter sur WhatsApp",
+      footerText: "Des solutions numériques créatives pour votre entreprise.",
+      mobileCta: "WhatsApp"
+    }
+  };
+
+  let currentLanguage = "en";
+
+  function updateWhatsAppLinks(language) {
+    const message = language === "fr"
+      ? "Bonjour, je suis intéressé(e) par vos services et je souhaiterais obtenir plus d'informations."
+      : "Hello, I am interested in your services and would like more information.";
+
+    document.querySelectorAll(".wa-link").forEach(link => {
+      const plan = link.dataset.plan;
+      const planMessage = language === "fr"
+        ? `Bonjour, je souhaite obtenir un devis pour l'offre ${plan || "vos services"}.`
+        : `Hello, I would like a quote for ${plan || "your services"}.`;
+
+      const text = plan ? planMessage : message;
+      link.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    });
+  }
+
+  function setLanguage(language) {
+    if (!translations[language]) return;
+
+    currentLanguage = language;
+    document.documentElement.lang = language;
+
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+      const key = element.dataset.i18n;
+      const translatedText = translations[language][key];
+
+      if (translatedText !== undefined) {
+        element.textContent = translatedText;
+      }
+    });
+
+    document.querySelectorAll("[data-lang]").forEach(button => {
+      const active = button.dataset.lang === language;
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+
+    updateWhatsAppLinks(language);
+
+    document.title = language === "fr"
+      ? "Son Creation | Création de sites web et solutions numériques"
+      : "Son Creation | Web Design & Digital Solutions";
+
+    const description = language === "fr"
+      ? "Son Creation aide les entreprises à développer une présence en ligne professionnelle grâce à des sites web modernes et des solutions numériques."
+      : "Son Creation helps businesses build a professional online presence with modern websites and digital solutions.";
+
+    document.querySelector('meta[name="description"]')
+      .setAttribute("content", description);
+  }
+
+  document.querySelectorAll("[data-lang]").forEach(button => {
+    button.addEventListener("click", () => {
+      setLanguage(button.dataset.lang);
+    });
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  setLanguage("en");
+</script>
+
+</body>
+</html>
